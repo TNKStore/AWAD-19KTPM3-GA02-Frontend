@@ -16,7 +16,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const { handleGoogle, loading, error } = useFetch(
-    `${process.env.REACT_APP_DOMAIN}/login-google`
+    `${process.env.REACT_APP_URL}/login-google`
   );
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function LoginPage() {
     };
 
     const response = await axios
-      .post(`${process.env.REACT_APP_DOMAIN}/login`, dataSent)
+      .post(`${process.env.REACT_APP_URL}/login`, dataSent)
       .catch((error) => console.error("There was an error!", error));
 
     return response;

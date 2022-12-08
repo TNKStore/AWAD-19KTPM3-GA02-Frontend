@@ -72,7 +72,7 @@ export default function PresentationDetailPage() {
 
     const response = await axios
       .get(
-        `${process.env.REACT_APP_DOMAIN}/slide/list?presentationId=${presentationID}`,
+        `${process.env.REACT_APP_URL}/slide/list?presentationId=${presentationID}`,
         {
           headers
         }
@@ -93,7 +93,7 @@ export default function PresentationDetailPage() {
     };
 
     const response = await axios
-      .post(`${process.env.REACT_APP_DOMAIN}/slide/create`, data, {
+      .post(`${process.env.REACT_APP_URL}/slide/create`, data, {
         headers
       })
       .catch((error) => console.error("There was an error!", error));
@@ -108,7 +108,7 @@ export default function PresentationDetailPage() {
 
     const response = await axios
       .delete(
-        `${process.env.REACT_APP_DOMAIN}/presentation/${presentationID}/slide/${id}`,
+        `${process.env.REACT_APP_URL}/presentation/${presentationID}/slide/${id}`,
         {
           headers
         }
